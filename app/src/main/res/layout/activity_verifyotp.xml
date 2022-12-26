@@ -1,114 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:orientation="vertical"
-    tools:context=".SignupActivity">
+    tools:context=".VerifyOTPActivity"
+    android:background="@drawable/bg">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"/>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_back"
-                    android:layout_gravity="center"
-                    app:tint="@color/white" />
-
-            </LinearLayout>
+            android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Verify OTP"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/lexend_medium"
+                android:id="@+id/Verifyotp"
+                android:layout_width="238dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="84dp"
+                android:fontFamily="@font/lexend"
+                android:text="@string/verify_otp"
                 android:textColor="@color/white"
-                android:textSize="30sp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:text="We have sent OTP to your mobile number +91-9815726817 | Change"
-                android:fontFamily="@font/lexend_regular"
-                android:alpha=".5"
-                android:textColor="@color/white"
-                android:textSize="16sp"/>
+                android:textSize="44sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.092"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/shape_textbox"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/lexend_regular"
-                android:hint="* * * * * * *"
-                android:textColorHint="#86FFFFFF"
-                />
+                android:id="@+id/contact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="116dp"
+                android:layout_marginEnd="24dp"
+                android:autofillHints=""
+                android:background="@drawable/input_bg"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:fontFamily="@font/lexend"
+                android:hint="@string/PASS"
+                android:inputType="numberPassword"
+                android:paddingLeft="20dp"
+                android:paddingTop="13dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="13dp"
+                android:textColor="#F8F5F5"
+                android:textColorHint="#B8AFAF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Verifyotp" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/shape_button_border"
-                android:text="Verify OTP"
-                android:enabled="false"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:textColor="@color/white"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/lexend_medium"/>
+            <Button
+                android:id="@+id/btnsendotp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/input_bg"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/lexend"
+
+                android:text="@string/verify"
+                android:textColor="@color/black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/contact"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/contact"
+                app:layout_constraintTop_toBottomOf="@+id/contact" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/otpmessage"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:text="Resend OTP"
-                android:gravity="center"
-                android:fontFamily="@font/lexend_regular"
-                android:alpha=".5"
-                android:textColor="@color/white"
-                android:textSize="16sp"/>
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/lexend"
+                android:text="@string/we_have_sent_otp_to_your_mobile_number"
+                android:textColor="#BFB7B7"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Verifyotp" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/btnresend"
+                android:layout_width="366dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/lexend"
+                android:gravity="center"
+                android:text="@string/resend_otp"
+                android:textColor="#A59A9A"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.166"
+                app:layout_constraintStart_toStartOf="@+id/btnsendotp"
+                app:layout_constraintTop_toBottomOf="@+id/btnsendotp" />
+
+            <TextView
+                android:id="@+id/Etphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/otpmessage"
+                app:layout_constraintHorizontal_bias="0.117"
+                app:layout_constraintStart_toStartOf="@+id/otpmessage"
+                app:layout_constraintTop_toBottomOf="@+id/otpmessage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Need Help? Contact Us"
-        android:fontFamily="@font/lexend_regular"
-        android:alpha=".8"
-        android:layout_margin="25dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="14sp"/>
-
-</LinearLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>
